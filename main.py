@@ -1,19 +1,16 @@
-class Task:
-    def __init__(self, name):
-        self.name = name
-        self.is_completed = False
+from taskcontroller import TaskController
+from taskmodel import TaskModel
+from taskview import TaskView
 
-    def complete(self):
-        self.is_completed = True
+model = TaskModel()
+view = TaskView()
+controller = TaskController(model, view)
 
+controller.add_task("Nakupit potraviny")
+controller.add_task("Vyzdvihnut balik")
+controller.add_task("Zavolaj Janovi")
 
-class TaskModel:
-    def __init__(self):
-        self.tasks = []
+controller.completed_task("Vyzdvihnut balik")
 
-    def add_task(self, task):
-        self.taks.append(task)
-
-    def get_tasks(self):
-        return self.tasks
+controller.display_tasks()
 

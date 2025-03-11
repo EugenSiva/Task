@@ -12,7 +12,7 @@ class TaskModel:
         self.tasks = []
 
     def add_task(self, task):
-        self.taks.append(task)
+        self.tasks.append(task)
 
     def get_tasks(self):
         return self.tasks
